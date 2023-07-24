@@ -12,7 +12,7 @@ const adduser = (req, res) => {
     dbPool.getConnection((err, conn) => {
         //놀고 있는 커넥션 하나 줘 > 커넥션 주면서 안에 함수를 호출한다. 커넥션이 없으면 err준다.
         if (err) {
-            // conn.release();
+            conn.release();
             console.log('커넥션 오류');
             res.end(); //오류가 나도 꼭 답장은 써줘야 한다.
             return;
