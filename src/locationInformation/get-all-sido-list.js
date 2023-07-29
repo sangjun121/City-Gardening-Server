@@ -1,4 +1,4 @@
-const dbPool = require('../config/database-pool.js');
+const dbPool = require('../../config/database-pool.js');
 
 const getAllSidoList = (req, res) => {
     const sidoList = [];
