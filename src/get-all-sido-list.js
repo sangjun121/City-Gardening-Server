@@ -1,6 +1,6 @@
 const dbPool = require('../config/database-pool.js');
 
-const getLocation = (req, res) => {
+const getAllSidoList = (req, res) => {
     const sidoList = [];
 
     dbPool.getConnection((err, conn) => {
@@ -40,4 +40,4 @@ const getLocation = (req, res) => {
     });
 };
 
-module.exports = getLocation;
+module.exports = getAllSidoList;

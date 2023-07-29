@@ -15,7 +15,9 @@
         "http-server": "^14.1.1",
         "mysql": "^2.18.1",
         "path": "^0.12.7",
-        "serve-static": "^1.15.0"
+        "request": "^2.88.2",
+        "serve-static": "^1.15.0",
+        "xml-js": "^1.6.11"
     },
     "devDependencies": {
         "swagger-jsdoc": "^6.2.8",
