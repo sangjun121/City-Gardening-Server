@@ -14,7 +14,7 @@ const getAllSidoList = (req, res) => {
         console.log('데이터베이스 연결 끈 얻었음');
 
         const exec = conn.query(
-            'SELECT city FROM locations_sido ORDER BY id ASC;',
+            'SELECT sido FROM locations_sido ORDER BY id ASC;',
             (err, result) => {
                 conn.release(); //커넥션 다쓰고 다음사람에게 넘겨주기
 
@@ -25,15 +25,22 @@ const getAllSidoList = (req, res) => {
                     return;
                 }
 
-                if (result) {
+                if (result.length > 0) {
                     console.log('select 성공');
-                    for (const sido of result) {
-                        sidoList.push(sido.city);
+                    for (const location of result) {
+                        sidoList.push(location.sido);
                     }
-                    res.send(sidoList);
+                    res.json({
+                        success: true,
+                        data: sidoList,
+                    });
                 } else {
                     console.log('select 실패');
-                    res.json({ success: false });
+                    res.json({
+                        success: false,
+                        reason: 'no_data',
+                        data: false,
+                    });
                 }
             }
         );

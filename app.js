@@ -13,7 +13,7 @@ app.use('/public', static(path.join(__dirname, 'public'))); //public 을 조상 
 
 app.post('/process/adduser', adduser); // 회원가입
 app.post('/process/login', login); // 로그인
-app.get('/volunteer/location', getAllSidoList); //시도 주소 정보 응답
+app.get('/volunteer/location/sido', getAllSidoList); //시도 주소 정보 응답
 app.post('/volunteer/location/gugun', getGugunList); // 구군 주소 정보 응답
 
 app.listen(3000, () => {
