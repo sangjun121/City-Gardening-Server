@@ -1,15 +1,18 @@
-const mysql = require('mysql');
+const MongoClient = require('mongodb').MongoClient;
 const dotenv = require('dotenv');
 dotenv.config();
 
-//database connection pool
-const dbPool = mysql.createPool({
-    connectionLimit: 10, //연결의 개수(풀의 갯수)
-    host: process.env.DB_HOST,
-    user: process.env.DB_USER,
-    password: process.env.DB_PASSWORD,
-    database: process.env.DB_DATABASE,
-    debug: false,
-});
+const dbURL = `mongodb+srv://${process.env.DB_USER_NAME}:${process.env.DB_PASSWORD}@cluster0.ncbityo.mongodb.net/?retryWrites=true&w=majority`;
 
-module.exports = dbPool;
+async function connectToDatabase() {
+    try {
+        const client = await MongoClient.connect(dbURL);
+        const db = client.db('CityGardening');
+        return { db, client };
+    } catch (error) {
+        console.error('Database connection error:', error);
+        throw error; // 에러 처리를 호출하는 코드로 전달
+    }
+}
+
+module.exports = connectToDatabase;

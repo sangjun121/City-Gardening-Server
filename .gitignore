@@ -141,4 +141,7 @@ dist
 # SvelteKit build / generate output
 .svelte-kit
 
+# swagger파일 gitignore처리
+**public/
+
 # End of https://www.toptal.com/developers/gitignore/api/node
