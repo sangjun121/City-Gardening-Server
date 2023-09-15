@@ -2,7 +2,7 @@ const MongoClient = require('mongodb').MongoClient;
 const dotenv = require('dotenv');
 dotenv.config();
 
-const dbURL = `mongodb+srv://${process.env.DB_USER_NAME}:${process.env.DB_PASSWORD}@cluster0.ncbityo.mongodb.net/?retryWrites=true&w=majority`;
+const dbURL = process.env.DB_URL;
 
 async function connectToDatabase() {
     try {
