@@ -5,25 +5,17 @@ const addAdministrativeDistrict = async () => {
     const db = await connectToDatabase();
 
     const dataToInsert = {
-        _id: 2,
-        city: '부산광역시',
+        _id: 3,
+        city: '대구광역시',
         districts: [
             '중구',
-            '서구',
             '동구',
-            '영도구',
-            '부산진구',
-            '동래구',
+            '서구',
             '남구',
             '북구',
-            '해운대구',
-            '사하구',
-            '금정구',
-            '강서구',
-            '연제구',
-            '수영구',
-            '사상구',
-            '기장군',
+            '수성구',
+            '달서구',
+            '달성군',
         ],
     };
 
