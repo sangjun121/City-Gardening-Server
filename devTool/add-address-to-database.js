@@ -5,9 +5,9 @@ const addAdministrativeDistrict = async () => {
     const db = await connectToDatabase();
 
     const dataToInsert = {
-        _id: 7,
-        city: '울산광역시',
-        districts: ['중구', '남구', '동구', '북구', '울주군'],
+        _id: 8,
+        city: '세종특별자치시',
+        districts: ['세종시'],
     };
 
     try {
