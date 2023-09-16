@@ -5,17 +5,19 @@ const addAdministrativeDistrict = async () => {
     const db = await connectToDatabase();
 
     const dataToInsert = {
-        _id: 3,
-        city: '대구광역시',
+        _id: 4,
+        city: '인천광역시',
         districts: [
             '중구',
             '동구',
+            '미추홀구',
+            '연수구',
+            '남동구',
+            '부평구',
+            '계양구',
             '서구',
-            '남구',
-            '북구',
-            '수성구',
-            '달서구',
-            '달성군',
+            '강화군',
+            '옹진군',
         ],
     };
 
