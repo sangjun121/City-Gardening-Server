@@ -5,9 +5,9 @@ const addAdministrativeDistrict = async () => {
     const db = await connectToDatabase();
 
     const dataToInsert = {
-        _id: 5,
-        city: '광주광역시',
-        districts: ['동구', '서구', '남구', '북구', '광산구'],
+        _id: 6,
+        city: '대전광역시',
+        districts: ['동구', '중구', '서구', '유성구', '대덕구'],
     };
 
     try {
