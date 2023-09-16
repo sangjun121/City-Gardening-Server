@@ -1,38 +1,29 @@
-const connectToDatabase = require('./config/database-pool.js');
+const connectToDatabase = require('../config/database-pool.js');
 
 //서버 개발자용 데베에 행정구역 데이터 값 저장하기 위한 함수
 const addAdministrativeDistrict = async () => {
     const db = await connectToDatabase();
 
     const dataToInsert = {
-        _id: 1,
-        city: '서울특별시',
+        _id: 2,
+        city: '부산광역시',
         districts: [
-            '강남구',
-            '강동구',
-            '강북구',
-            '강서구',
-            '관악구',
-            '광진구',
-            '구로구',
-            '금천구',
-            '노원구',
-            '도봉구',
-            '동대문구',
-            '동작구',
-            '마포구',
-            '서대문구',
-            '서초구',
-            '성동구',
-            '성북구',
-            '송파구',
-            '양천구',
-            '영등포구',
-            '용산구',
-            '은평구',
-            '종로구',
             '중구',
-            '중랑구',
+            '서구',
+            '동구',
+            '영도구',
+            '부산진구',
+            '동래구',
+            '남구',
+            '북구',
+            '해운대구',
+            '사하구',
+            '금정구',
+            '강서구',
+            '연제구',
+            '수영구',
+            '사상구',
+            '기장군',
         ],
     };
 
