@@ -1,4 +1,8 @@
 const connectToDatabase = require('../config/database-pool.js');
+//로그인 세션 관리
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+const session = require('express-session');
 
 const login = async (req, res) => {
     const paramId = req.body.id; //위에 use(json과 urlencoded)덕분에 알맞은 형태로 변경해주기 때문에 req.body 식으로 접근가능하다
