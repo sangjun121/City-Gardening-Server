@@ -5,28 +5,9 @@ const addAdministrativeDistrict = async () => {
     const db = await connectToDatabase();
 
     const dataToInsert = {
-        _id: 16,
-        city: '경상남도',
-        districts: [
-            '창원시',
-            '진주시',
-            '통영시',
-            '사천시',
-            '김해시',
-            '밀양시',
-            '거제시',
-            '양산시',
-            '의령군',
-            '함안군',
-            '창녕군',
-            '고성군',
-            '남해군',
-            '하동군',
-            '산청군',
-            '함양군',
-            '거창군',
-            '합천군',
-        ],
+        _id: 17,
+        city: '제주특별자치도',
+        districts: ['제주시', '서귀포시'],
     };
 
     try {
