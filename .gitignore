@@ -144,4 +144,8 @@ dist
 # swagger파일 gitignore처리
 **public/
 
+# session폴더 gitignore처리
+**sessions/
+
 # End of https://www.toptal.com/developers/gitignore/api/node
+
