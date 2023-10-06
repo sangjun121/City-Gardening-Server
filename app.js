@@ -12,13 +12,8 @@ passportConfig();
 
 //라우터 가져오기
 const authRouter = require('./src/routes/auth');
-
+const landRouter = require('./src/routes/land');
 const app = express();
-
-const adduser = require('./src/add-user.js');
-const getAllSidoList = require('./src/locationInformation/get-all-sido-list.js');
-const getGugunList = require('./src/locationInformation/get-gugun-list.js');
-const getVolunteerList = require('./src/get-volunteer-list.js');
 
 //미들웨어 : 요청 - 응답 중간에 뭔가 실행되는 코드
 app.use(express.urlencoded({ extended: true })); //웹서버의 환경설정; 프론트에서 어떤 url 형태로 보내던 허용하겠다는 의미..(?)
@@ -46,14 +41,7 @@ app.use(passport.session()); // req.session 객체에 passport정보를 추가 �
 
 //API 라우터
 app.use('/auth', authRouter);
-
-//회원관리
-app.post('/process/adduser', adduser); // 회원가입
-
-app.get('/volunteer/location/sido', getAllSidoList); //시도 주소 정보 응답
-app.post('/volunteer/location/gugun', getGugunList); // 구군 주소 정보 응답
-
-app.post('/volunteer/list', getVolunteerList); // 봉사활동 리스트 응답
+app.use('/land', landRouter);
 
 app.listen(process.env.PORT, () => {
     console.log('서버 작동 성공');

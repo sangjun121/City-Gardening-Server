@@ -3,7 +3,7 @@ const passport = require('passport');
 const bcrypt = require('bcrypt');
 const { isLoggedIn, isNotLoggedIn } = require('../../lib/passport/middlewares'); // 내가 만든 사용자 미들웨어
 const router = express.Router();
-const connectToDatabase = require('../config/database-pool.js');
+const connectToDatabase = require('../../config/database-pool');
 
 //회원가입
 router.post('/adduser', async (req, res) => {
