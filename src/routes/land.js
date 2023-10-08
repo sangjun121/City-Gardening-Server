@@ -21,9 +21,12 @@ router.post('/register', upload.single('images'), async (req, res) => {
         longitude: paramLongitude,
         pollutionProgress: paramPollutionProgress,
     };
-    console.log(req.body);
-
-    res.json(req.file);
+    console.log(req.file);
+    if (req.file) {
+        res.json({ success: true });
+    } else {
+        res.json({ success: false });
+    }
 });
 
 module.exports = router;
