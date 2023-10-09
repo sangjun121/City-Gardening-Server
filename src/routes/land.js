@@ -21,6 +21,7 @@ router.post('/register', upload.single('images'), async (req, res) => {
     };
 
     console.log(req.file);
+    console.log(req.files);
 
     // const db = await connectToDatabase();
     // db.collection('polluctionLandInformation').insertOne(landData);

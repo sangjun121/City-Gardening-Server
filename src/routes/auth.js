@@ -60,7 +60,8 @@ router.post('/login', isNotLoggedIn, (req, res, next) => {
                     return next(loginError);
                 }
                 // done(null, user)로 로직이 성공적이라면, 세션에 사용자 정보를 저장해놔서 로그인 상태가 된다.
-                return res.json({ success: true, description: '로그인 성공' });
+
+                return res.json({ name: user.name, seed: user.seed });
             });
         }
     })(req, res, next);

@@ -1,11 +1,10 @@
 const multer = require('multer');
 const multerS3 = require('multer-s3');
-const { S3Client, ListBucketsCommand } = require('@aws-sdk/client-s3');
-const s3Client = new S3Client({ region: 'ap-northeast-2' });
 const dotenv = require('dotenv');
 dotenv.config();
 
-const s3 = new S3Client({
+const AWS = require('aws-sdk');
+const s3 = new AWS.S3({
     //aws 구성정보 저장
     accessKeyId: process.env.AWS_ACCESS_KEY,
     secretAccessKey: process.env.AWS_SECRET_ACCESS_KEY,
