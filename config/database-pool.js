@@ -7,6 +7,7 @@ const dbURL = process.env.DB_URL;
 async function connectToDatabase() {
     try {
         const client = await MongoClient.connect(dbURL);
+
         const db = client.db('CityGardening');
         return db;
     } catch (error) {
