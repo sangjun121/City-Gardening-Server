@@ -19,9 +19,11 @@ router.post('/register', upload.array('images'), async (req, res) => {
         pollutionProgress: paramPollutionProgress,
     };
 
-    req.files.map((data) => {
-        console.log(data);
-    });
+    if (req.file) {
+        console.log(req.file);
+    } else if (req.files) {
+        console.log(req.files);
+    }
 
     res.json({ success: true });
 
