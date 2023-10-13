@@ -20,8 +20,10 @@ router.post('/register', upload.array('images'), async (req, res) => {
     };
 
     if (req.file) {
+        console.log('file 성공');
         console.log(req.file);
     } else if (req.files) {
+        console.log('files 성공');
         console.log(req.files);
     }
 
