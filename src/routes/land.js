@@ -3,7 +3,7 @@ const router = express.Router();
 const connectToDatabase = require('../../config/database-pool');
 const upload = require('../../config/imageUploader');
 
-router.post('/register', upload.single('images'), async (req, res) => {
+router.post('/register', upload.array('images'), async (req, res) => {
     //오염지역 등록한 사용자이름도 추가
 
     const paramDetailDescription = req.body.detailDescription;
@@ -19,16 +19,11 @@ router.post('/register', upload.single('images'), async (req, res) => {
         pollutionProgress: paramPollutionProgress,
     };
 
-    console.log(req.file);
-    console.log(req.files);
+    req.files.map((data) => {
+        console.log(data);
+    });
 
-    if (req.file) {
-        res.json({ success: 'true' });
-    } else if (req.files) {
-        res.json({ success: 'trues' });
-    } else {
-        res.json({ success: 'false' });
-    }
+    res.json({ success: true });
 
     // const db = await connectToDatabase();
     // db.collection('polluctionLandInformation').insertOne(landData);
