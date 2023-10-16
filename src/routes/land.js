@@ -25,7 +25,6 @@ router.post('/register', upload.array('images'), async (req, res) => {
     };
 
     const db = await connectToDatabase();
-    db.collection('polluctionLandInformation').insertOne(landData);
 
     try {
         db.collection('polluctionLandInformation').insertOne(landData);
